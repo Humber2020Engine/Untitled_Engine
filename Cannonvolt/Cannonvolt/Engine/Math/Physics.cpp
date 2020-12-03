@@ -29,12 +29,14 @@ void Physics::Update(const float deltaTime)
 	else if (velocity.x < -speedCap.x) { 
 		velocity.x = -speedCap.x; }
 
+
 	if (velocity.y > speedCap.y) { velocity.y = speedCap.y; }
 	else if (velocity.y < -speedCap.y) { velocity.y = -speedCap.y; }
 
 	parent->Translate(velocity * deltaTime + (0.5f * acceleration * std::powf(deltaTime, 2)));
 
-	velocity += (gravity + acceleration) * deltaTime;
+	if (velocity.y > -30.0f) { acceleration = gravity + acceleration; }
+	velocity += acceleration * deltaTime;
 	acceleration = glm::vec2(0);
 
 	

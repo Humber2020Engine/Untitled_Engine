@@ -35,8 +35,9 @@ void InputControl::Update(float deltaTime_) {
 		}
 	}
 	if (player->GetMod("Jump")) {
-		if (KeyEventListener::keyMap[SDLK_SPACE]) {
-			player->ApplyForce(glm::vec2(0, 55.0f));
+		if (KeyEventListener::keyMap[SDLK_SPACE] && player->GetJump()) {
+			player->ApplyForce(glm::vec2(0, 6250.0f));
+			player->SetJump(false);
 		}
 	}
 	if (player->GetMod("Shoot")) {

@@ -5,7 +5,8 @@
 
 std::map<std::string, bool> Character::modules = std::map<std::string, bool>();
 
-Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"),"Mario", this)) {
+Character::Character() : GameObject(new Sprite(ShaderHandler::GetInstance()->GetShader("basicShader"), "Mario", this)),
+	canJump(false) {
 
 
 }
@@ -60,6 +61,16 @@ void Character::SetMod(std::string name_, bool state_)
 	modules[name_] = state_;
 }
 
+void Character::SetJump(bool state)
+{
+	canJump = state;
+}
+
+bool Character::GetJump() const
+{
+	return canJump;
+}
+
 //TODO: math is wrong for rotation.
 void Character::Shot()
 {
@@ -68,5 +79,6 @@ void Character::Shot()
 
 void Character::CollisionResponse(GameObject* obj)
 {
+	if (obj->GetTag() == "Ground") { canJump = true; }
 	GameObject::CollisionResponse(obj);
 }
