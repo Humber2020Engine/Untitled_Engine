@@ -14,7 +14,7 @@ public:
 
 	//Setters
 
-	void SetVelocity(glm::vec2 vel_);
+	void ApplyForce(glm::vec2 force_);
 
 	void RigidbodyCollision(GameObject* obj);
 
@@ -27,18 +27,22 @@ public:
 	void SetRigidBody(bool state);
 	bool GetRigid() const;
 
-	void ApplyForce(glm::vec2 force_);
+	void ApplyDrag(bool state);
+	void SetSpeedLimit(glm::vec2 limit);
 
 private:
+	void Drag(float deltaTime_);
+
+	void SetAcceleration(glm::vec2 acc_);
+
 	GameObject* parent;
 
 	glm::vec2 velocity, acceleration;
 
-	float angularVelocity, angularAcceleration;
-
 	bool isStatic;
 	bool isRigid;
+	bool applyDrag;
 	
 	glm::vec2 gravity;
-
+	glm::vec2 speedCap;
 };

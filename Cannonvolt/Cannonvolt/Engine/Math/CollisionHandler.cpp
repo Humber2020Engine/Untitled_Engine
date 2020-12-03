@@ -31,11 +31,6 @@ void CollisionHandler::OnDestroy()
 	prevCollisions.clear();
 }
 
-void CollisionHandler::OnCreate(float worldSize_)
-{
-	prevCollisions.clear();
-}
-
 void CollisionHandler::AddObject(GameObject * go_)
 {
 	gameObjects.push_back(go_);

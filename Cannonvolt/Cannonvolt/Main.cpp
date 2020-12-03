@@ -1,6 +1,7 @@
 #include "Engine/Core/CoreEngine.h"
 #include "Game/SceneManager.h"
 #include "Engine/Modules/Platformer.h"
+#include "Engine/Modules/Flight.h"
 
 int main(int argc, char* argv[]) {
 	//Set game interface here 

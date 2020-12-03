@@ -14,7 +14,6 @@ public:
 
 	static CollisionHandler* GetInstance();
 	void OnDestroy();
-	void OnCreate(float worldSize_);
 	void AddObject(GameObject* go_);
 	void RemoveObject(int location_);
 	void AABB();

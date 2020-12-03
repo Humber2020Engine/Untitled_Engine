@@ -25,10 +25,18 @@ public:
 	static bool GetMod(std::string name_);
 
 	static void SetMod(std::string name_, bool state_);
+
+	void SetJump(bool state);
+
+	bool GetJump() const;
+
 private:
 
 	static std::map<std::string, bool> modules;
 	bool dead;
+
+	bool canJump;
+
 };
 
 #endif // !Character_h

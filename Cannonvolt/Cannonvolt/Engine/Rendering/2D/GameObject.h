@@ -41,7 +41,7 @@ public:
 
 	//Physics Functions
 
-	void ApplyVelocity(glm::vec2 force_);
+	void ApplyForce(glm::vec2 force_);
 
 	bool IsStatic() const;
 
@@ -51,6 +51,10 @@ public:
 
 	bool IsRigid() const;
 	void SetRigid(bool rig);
+
+	void SetDrag(bool drag);
+
+	void SetSpeedLimit(glm::vec2 limit);
 
 private:
 	Sprite* sprite;

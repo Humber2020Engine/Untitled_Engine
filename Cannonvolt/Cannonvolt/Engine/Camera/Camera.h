@@ -30,9 +30,6 @@ public:
 	glm::vec3 GetPosition() const;
 	glm::vec2 GetClippingPlanes() const;
 
-	void ProcessMouseMovement(glm::vec2 offset_);
-	void ProcessMouseScroll(int y_);
-
 	std::vector<glm::vec4> GetFrustumPlanes();
 
 	bool FrustumCull(std::vector<glm::vec4> frustum_, BoundingBox* box_);

@@ -121,7 +121,7 @@ void Sprite::Draw(Camera* camera_)
     transform = glm::translate(transform, glm::vec3(parent->GetPosition(), 0));
 
     transform = glm::translate(transform, glm::vec3(0.5f * scale.x, 0.5f * scale.y, 0.0f)); // move origin of rotation to center of quad
-    transform = glm::rotate(transform, glm::radians(parent->GetRotation()), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
+    transform = glm::rotate(transform, glm::radians(-parent->GetRotation()), glm::vec3(0.0f, 0.0f, 1.0f)); // rotate
     transform = glm::translate(transform, glm::vec3(-0.5f * scale.x, -0.5f * scale.y, 0.0f)); // move origin back
 
     transform = glm::scale(transform, glm::vec3(scale, 0));

@@ -70,40 +70,7 @@ glm::vec3 Camera::GetPosition() const
 glm::vec2 Camera::GetClippingPlanes() const
 {
 	return glm::vec2(nearPlane, farPlane);
-}
 
-void Camera::ProcessMouseMovement(glm::vec2 offset_)
-{
-	/*
-	offset_ *= 0.05f;
-
-	yaw += offset_.x;
-	pitch += offset_.y;
-
-	if (pitch > 89.0f) {
-		pitch = 89.0f;
-	}
-	if (pitch < -89.0f) {
-		pitch = 89.0f;
-	}
-
-	if (yaw < 0.0f) {
-		yaw += 360.0f;
-	}
-
-	if (yaw > 360.0f) {
-		yaw -= 360.0f;
-	}
-	*/
-	UpdateCameraVectors();
-}
-
-void Camera::ProcessMouseScroll(int y_)
-{
-	if (y_ < 0 || y_ > 0) {
-		position += static_cast<float>(y_) * (forward * 2.0f);
-	}
-	UpdateCameraVectors();
 }
 
 std::vector<glm::vec4> Camera::GetFrustumPlanes()
