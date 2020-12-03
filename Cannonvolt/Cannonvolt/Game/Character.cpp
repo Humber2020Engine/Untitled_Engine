@@ -20,11 +20,15 @@ bool Character::OnCreate()
 	SetTag("Mario");
 	SetGravity(true);
 	SetRigid(true);
+	SetDrag(true);
 	return true;
 }
 
 void Character::Update(const float deltaTime_)
 {
+	if (modules["Flight"]) {
+		ApplyForce(glm::vec2(80.0f, 0.0f));
+	}
 	GameObject::Update(deltaTime_);
 }
 
@@ -43,7 +47,6 @@ void Character::LoadMods()
 	modules["Movement"] = false;
 	modules["Jump"] = false;
 	modules["Shoot"] = false;
-=======
 	modules["Flight"] = false;
 }
 

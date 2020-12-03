@@ -91,13 +91,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\include;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;D:\School\Semester 3\Midstone\Untitled_Engine\Cannonvolt\Linking\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Github\Untitled_Engine\Cannonvolt\Linking\OpenGL\lib;D:\Github\Untitled_Engine\Cannonvolt\Linking\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -159,6 +159,7 @@
     <ClCompile Include="Engine\Graphics\TextureHandler.cpp" />
     <ClCompile Include="Engine\Math\CollisionHandler.cpp" />
     <ClCompile Include="Engine\Math\Physics.cpp" />
+    <ClCompile Include="Engine\Modules\Flight.cpp" />
     <ClCompile Include="Engine\Modules\Modular_Base.cpp" />
     <ClCompile Include="Engine\Modules\Platformer.cpp" />
     <ClCompile Include="Engine\Rendering\2D\GameObject.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Engine\Math\BoundingBox.h" />
     <ClInclude Include="Engine\Math\CollisionHandler.h" />
     <ClInclude Include="Engine\Math\Physics.h" />
+    <ClInclude Include="Engine\Modules\Flight.h" />
     <ClInclude Include="Engine\Modules\Modular_Base.h" />
     <ClInclude Include="Engine\Modules\Platformer.h" />
     <ClInclude Include="Engine\Rendering\2D\GameObject.h" />

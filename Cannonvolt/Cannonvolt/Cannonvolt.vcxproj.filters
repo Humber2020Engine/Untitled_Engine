@@ -156,6 +156,9 @@
     <ClCompile Include="Engine\Modules\Modular_Base.cpp">
       <Filter>Source Files\Engine\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Modules\Flight.cpp">
+      <Filter>Source Files\Engine\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\CoreEngine.h">
@@ -241,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="Game\Spike.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Modules\Flight.h">
+      <Filter>Header Files\Engine\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

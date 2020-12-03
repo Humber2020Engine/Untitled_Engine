@@ -125,9 +125,9 @@ void GameObject::CollisionResponse(GameObject* obj)
 	physics.RigidbodyCollision(obj);
 }
 
-void GameObject::ApplyVelocity(glm::vec2 force_)
+void GameObject::ApplyForce(glm::vec2 force_)
 {
-	physics.SetVelocity(force_);
+	physics.ApplyForce(force_);
 }
 
 bool GameObject::IsStatic() const
@@ -153,6 +153,16 @@ bool GameObject::IsRigid() const
 void GameObject::SetRigid(bool rig)
 {
 	physics.SetRigidBody(rig);
+}
+
+void GameObject::SetDrag(bool drag)
+{
+	physics.ApplyDrag(drag);
+}
+
+void GameObject::SetSpeedLimit(glm::vec2 limit)
+{
+	physics.SetSpeedLimit(limit);
 }
 
 void GameObject::Flip(bool invert_)

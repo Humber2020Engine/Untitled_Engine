@@ -9,7 +9,6 @@ public:
 	virtual ~Modular_Base();
 
 	virtual bool Initilize() = 0;
-	virtual void Update(const float deltaTime_) = 0;
 
 };
 
