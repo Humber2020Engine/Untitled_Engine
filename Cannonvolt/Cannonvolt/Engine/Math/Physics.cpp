@@ -4,7 +4,7 @@
 #define Gravity glm::vec2(0.0f, -9.8f)
 
 Physics::Physics() : velocity(glm::vec2(0)), acceleration(glm::vec2(0)), parent(nullptr), isStatic(false), 
-isRigid(false), gravity(0), applyDrag(false), speedCap(glm::vec2(50))
+isRigid(false), gravity(0), applyDrag(false), speedCap(glm::vec2(60))
 {
 
 }
@@ -35,11 +35,10 @@ void Physics::Update(const float deltaTime)
 
 	parent->Translate(velocity * deltaTime + (0.5f * acceleration * std::powf(deltaTime, 2)));
 
-	if (velocity.y > -30.0f) { acceleration = gravity + acceleration; }
+	if (velocity.y > -35.0f) { acceleration = gravity + acceleration; }
 	velocity += acceleration * deltaTime;
 	acceleration = glm::vec2(0);
 
-	
 	if (applyDrag) { Drag(deltaTime); }
 
 
