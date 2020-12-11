@@ -73,6 +73,46 @@ glm::vec2 Camera::GetClippingPlanes() const
 
 }
 
+std::vector<float> Camera::GetFrustumPlanes()
+{
+	std::vector<float> frustum;
+	frustum.reserve(4);
+
+	std::vector<float> frustum;
+	frustum.reserve(4);
+
+	//Left
+
+	frustum.push_back(position.x);
+
+	//Right
+
+	frustum.push_back(position.x + CoreEngine::GetInstance()->GetWindowSize().x);
+
+	//Top
+
+	frustum.push_back(position.y + CoreEngine::GetInstance()->GetWindowSize().y);
+
+	//Bottom
+	frustum.push_back(position.y);
+
+	return frustum;
+}
+
+//AABB culling
+bool Camera::FrustumCull(std::vector<float> frustum_, BoundingBox* box_)
+{
+	if (box_->pos.x + box_->dimentions.x >= frustum_[0]
+		&& box_->pos.x <= frustum_[1]
+		&& box_->pos.y <= frustum_[2]
+		&& box_->pos.y + box_->dimentions.y >= frustum_[3])
+	{
+		return true;
+	}
+
+	return false;
+}
+
 void Camera::UpdateCameraVectors()
 {
 	forward.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));

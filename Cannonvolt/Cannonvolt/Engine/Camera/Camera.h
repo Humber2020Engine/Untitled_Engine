@@ -30,6 +30,10 @@ public:
 	glm::vec3 GetPosition() const;
 	glm::vec2 GetClippingPlanes() const;
 
+	std::vector<float> GetFrustumPlanes();
+
+	bool FrustumCull(std::vector<float> frustum_, BoundingBox* box_);
+
 	void Translate(glm::vec3 movement_);
 
 

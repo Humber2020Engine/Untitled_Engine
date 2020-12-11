@@ -1,5 +1,6 @@
 #include "SceneGraph.h"
 #include "../Graphics/ShaderHandler.h"
+#include "../Core/CoreEngine.h"
 
 std::unique_ptr<SceneGraph> SceneGraph::sceneGraphInstance = nullptr;
 
@@ -85,8 +86,11 @@ void SceneGraph::Draw(Camera * camera_)
 
 	glUseProgram(ShaderHandler::GetInstance()->GetShader("basicShader"));
 
+	std::vector<float> frustum = CoreEngine::GetInstance()->GetCamera()->GetFrustumPlanes();
 	for (auto entry : sceneGameObjects) {
-		entry.second->Draw(camera_);
+		if (CoreEngine::GetInstance()->GetCamera()->FrustumCull(frustum, &entry.second->GetBoundingBox())) {
+			entry.second->Draw(camera_);
+		}
 	}
 }
 
