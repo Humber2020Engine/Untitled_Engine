@@ -42,6 +42,7 @@ public:
 		return false;
 	}
 
+	//Get the shortest distance to sperating two objects
 	inline glm::vec2 CollisionDepth(BoundingBox* box_) {
 
 		glm::vec2 maxCorner = pos + dimentions;
@@ -52,8 +53,6 @@ public:
 		glm::vec2 depth(0);
 
 		//First get which side is colliding
-
-		//TODO: test if this works with objects of different size
 
 		//Coming from the right
 		float x1 = maxCorner.x - otherMinCorner.x;

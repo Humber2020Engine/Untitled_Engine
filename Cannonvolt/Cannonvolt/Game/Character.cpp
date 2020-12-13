@@ -28,7 +28,7 @@ bool Character::OnCreate()
 void Character::Update(const float deltaTime_)
 {
 	if (modules["Flight"]) {
-		ApplyForce(glm::vec2(80.0f, 0.0f));
+		ApplyForce(glm::vec2(80.0f, 0.0f), GetRotation());
 	}
 	GameObject::Update(deltaTime_);
 }

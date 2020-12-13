@@ -1,9 +1,25 @@
 [INFO]: Creating Game Scene in file: GameScene.cpp on line: 15
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
-[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 24
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name GameObject that already exist. in file: SceneGraph.cpp on line: 25
 [INFO]: Everything was created okay in file: CoreEngine.cpp on line: 44
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25
+[WARNING]: Trying to add a GameObject with a name FireBall that already exist. in file: SceneGraph.cpp on line: 25

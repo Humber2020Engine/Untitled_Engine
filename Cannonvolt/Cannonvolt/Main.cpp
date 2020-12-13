@@ -9,7 +9,8 @@ int main(int argc, char* argv[]) {
 
 	std::vector<Modular_Base*> mods;
 	mods.reserve(3);
-	mods.push_back(new Platformer());
+	//mods.push_back(new Platformer());
+	mods.push_back(new Flight());
 
 	if (!CoreEngine::GetInstance()->OnCreate("Game211 Midstone", 800, 600, mods)) {
 		return 0;

@@ -18,7 +18,7 @@ FireBall::~FireBall()
 void FireBall::Update(const float deltaTime_)
 {
 	//Apply Const Speed
-	ApplyForce(glm::vec2(8.0f, 0.0f));
+	ApplyForce(glm::vec2(8.0f, 0.0f), GetRotation());
 	GameObject::Update( deltaTime_);
 }
 

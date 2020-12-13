@@ -78,9 +78,6 @@ std::vector<float> Camera::GetFrustumPlanes()
 	std::vector<float> frustum;
 	frustum.reserve(4);
 
-	std::vector<float> frustum;
-	frustum.reserve(4);
-
 	//Left
 
 	frustum.push_back(position.x);

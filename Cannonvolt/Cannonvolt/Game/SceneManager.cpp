@@ -20,12 +20,12 @@ bool SceneManager::OnCreate()
 	if (CoreEngine::GetInstance()->GetCurrentScene() == 0) {
 		currentScene = new TestScene();
 		if (!currentScene->OnCreate()) {
-			Debug::FatalError("Scene has failed on create", "Game1", __LINE__);
+			Debug::FatalError("Scene has failed on create", "SceneManager.cpp", __LINE__);
 			return false;
 		}
 		return true;
 	}
-	Debug::FatalError("Engine scene number is not zero", "Game1.cpp", __LINE__);
+	Debug::FatalError("Engine scene number is not zero", "SceneManager.cpp", __LINE__);
 	return false;
 }
 
@@ -58,7 +58,7 @@ void SceneManager::BuildScene()
 	}
 
 	if (!currentScene->OnCreate()) {
-		Debug::FatalError("Scene has failed on create", "Game1", __LINE__);
+		Debug::FatalError("Scene has failed on create", "SceneManager.cpp", __LINE__);
 		CoreEngine::GetInstance()->Exit();
 	}
 	currentSceneNum = CoreEngine::GetInstance()->GetCurrentScene();

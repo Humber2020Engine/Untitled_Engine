@@ -41,7 +41,7 @@ public:
 
 	//Physics Functions
 
-	void ApplyForce(glm::vec2 force_);
+	void ApplyForce(glm::vec2 force_, float rotation_);
 
 	bool IsStatic() const;
 

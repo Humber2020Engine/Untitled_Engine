@@ -14,7 +14,7 @@ public:
 
 	//Setters
 
-	void ApplyForce(glm::vec2 force_);
+	void ApplyForce(glm::vec2 force_, float rotation_);
 
 	void RigidbodyCollision(GameObject* obj);
 

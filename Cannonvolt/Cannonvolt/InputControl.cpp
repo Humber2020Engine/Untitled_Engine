@@ -18,11 +18,11 @@ void InputControl::Update(float deltaTime_) {
 	if (player->GetMod("Movement")) {
 		if (KeyEventListener::keyMap[SDLK_a]) {
 			player->Flip(true);
-			player->ApplyForce(glm::vec2(-50.0f, 0.0f));
+			player->ApplyForce(glm::vec2(-50.0f, 0.0f), player->GetRotation());
 		}
 		else if (KeyEventListener::keyMap[SDLK_d]) {
 			player->Flip(false);
-			player->ApplyForce(glm::vec2(50.0f, 0.0f));
+			player->ApplyForce(glm::vec2(50.0f, 0.0f), player->GetRotation());
 		}
 
 	    if (KeyEventListener::keyMap[SDLK_LSHIFT]) {
@@ -36,7 +36,7 @@ void InputControl::Update(float deltaTime_) {
 	}
 	if (player->GetMod("Jump")) {
 		if (KeyEventListener::keyMap[SDLK_SPACE] && player->GetJump()) {
-			player->ApplyForce(glm::vec2(0, 6250.0f));
+			player->ApplyForce(glm::vec2(0, 6250.0f), 0);
 			player->SetJump(false);
 		}
 	}

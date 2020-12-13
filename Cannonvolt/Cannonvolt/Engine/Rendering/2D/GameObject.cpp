@@ -125,9 +125,9 @@ void GameObject::CollisionResponse(GameObject* obj)
 	physics.RigidbodyCollision(obj);
 }
 
-void GameObject::ApplyForce(glm::vec2 force_)
+void GameObject::ApplyForce(glm::vec2 force_, float rotation_)
 {
-	physics.ApplyForce(force_);
+	physics.ApplyForce(force_, rotation_);
 }
 
 bool GameObject::IsStatic() const

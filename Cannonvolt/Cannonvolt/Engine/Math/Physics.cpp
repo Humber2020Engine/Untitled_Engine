@@ -19,39 +19,35 @@ void Physics::OnCreate(GameObject* parent_) {
 
 void Physics::Update(const float deltaTime)
 {
+	if (!isStatic) {
+		//Velocity Cap (Prevents the GameObject from moveing too fast in any direction.
+		//Would like a more natural version of this so as to decrease run cost. perhaps a opposing force relative
+		//To velocity would work?
+		if (velocity.x > speedCap.x) { velocity.x = speedCap.x; }
+		else if (velocity.x < -speedCap.x) { velocity.x = -speedCap.x; }
 
-	//Velocity Cap (Prevents the GameObject from moveing too fast in any direction.
-	//Would like a more natural version of this so as to decrease run cost. perhaps a opposing force relative
-	//To velocity would work?
-	if (velocity.x > speedCap.x) { 
-		velocity.x = speedCap.x; 
+		if (velocity.y > speedCap.y) { velocity.y = speedCap.y; }
+		else if (velocity.y < -speedCap.y) { velocity.y = -speedCap.y; }
+
+		parent->Translate(velocity * deltaTime + (0.5f * acceleration * std::powf(deltaTime, 2)));
+
+		if (velocity.y > -35.0f) { acceleration = gravity + acceleration; }
+		velocity += acceleration * deltaTime;
+		acceleration = glm::vec2(0);
+
+		if (applyDrag) { Drag(deltaTime); }
+
+		std::string blank = "";
+		blank.append(std::to_string(velocity.x) + " " + std::to_string(velocity.y) + "\n");
+
+		printf(blank.c_str());
 	}
-	else if (velocity.x < -speedCap.x) { 
-		velocity.x = -speedCap.x; }
-
-
-	if (velocity.y > speedCap.y) { velocity.y = speedCap.y; }
-	else if (velocity.y < -speedCap.y) { velocity.y = -speedCap.y; }
-
-	parent->Translate(velocity * deltaTime + (0.5f * acceleration * std::powf(deltaTime, 2)));
-
-	if (velocity.y > -35.0f) { acceleration = gravity + acceleration; }
-	velocity += acceleration * deltaTime;
-	acceleration = glm::vec2(0);
-
-	if (applyDrag) { Drag(deltaTime); }
-
-
-	std::string blank = "";
-	blank.append(std::to_string(velocity.x) + " " + std::to_string(velocity.y) + "\n");
-
-	printf(blank.c_str());
 }
 
-void Physics::ApplyForce(glm::vec2 force_)
+void Physics::ApplyForce(glm::vec2 force_, float rotation_)
 {
-	SetAcceleration(glm::mat2(glm::cos(glm::radians(parent->GetRotation())), -glm::sin(glm::radians(parent->GetRotation())),
-		glm::sin(glm::radians(parent->GetRotation())), glm::cos(glm::radians(parent->GetRotation()))) * force_);
+	SetAcceleration(glm::mat2(glm::cos(glm::radians(rotation_)), -glm::sin(glm::radians(rotation_)),
+		glm::sin(glm::radians(rotation_)), glm::cos(glm::radians(rotation_))) * force_);
 
 }
 void Physics::RigidbodyCollision(GameObject* obj)
